@@ -1,0 +1,14 @@
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+.bundle {
+  &.is-loading {
+    animation: fadeIn ease-in 1;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    animation-duration: 0.1s;
+    opacity: 0;
+  }
+}

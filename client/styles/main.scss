@@ -1,0 +1,12 @@
+@import 'shame';
+@import 'base/index';
+@import 'config/index';
+@import 'layout/index';
+@import 'mixins/index';
+@import 'modules/index';
+@import 'state/index';
+@import 'vendor/index';
+
+html {
+  background-color: #fafafa;
+}

@@ -1,0 +1,16 @@
+*               text=auto
+.*              text eol=lf
+*.css           text eol=lf
+*.scss          text eol=lf
+*.html          text eol=lf
+*.js            text eol=lf
+*.jsx           text eol=lf
+*.json          text eol=lf
+*.md            text eol=lf
+*.sh            text eol=lf
+*.svg           text eol=lf
+*.editorconfig  text eol=lf
+*.eslintrc      text eol=lf
+*.gitignore     text eol=lf
+*.cmd           text eol=lf
+*.ejs           text eol=lf

@@ -1,0 +1,5 @@
+node_modules/
+tools/node/7.9.0/*
+!tools/node/7.9.0/node.7z
+dist/
+server/config/secret.js

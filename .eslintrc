@@ -1,0 +1,27 @@
+{
+  extends: 'airbnb',
+  parserOptions: {
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true,
+      jsx: true,
+      modules: true
+    },
+    sourceType: 'module'
+  },
+  parser: 'babel-eslint',
+  env: {
+    es6: true,
+    node: true
+  },
+  plugins: [
+    'react'
+  ],
+  rules: {
+    'no-underscore-dangle': ['error', { allow: ['_id'] }],
+    'comma-dangle': ['error', 'never'],
+    'import/no-extraneous-dependencies': ['error', {'devDependencies': true}],
+    'no-restricted-syntax': ['error'],
+    'max-len': ['error', 120]
+  }
+}
