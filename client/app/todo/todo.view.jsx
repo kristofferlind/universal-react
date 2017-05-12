@@ -18,9 +18,14 @@ class TodoView extends React.Component {
     todoActions.createTodo(text);
   }
   render() {
-    const { todos, todoActions } = this.props;
+    const { todos, todoActions, isOnline } = this.props;
     return (
       <div>
+        { isOnline
+          ? (<span>Online</span>)
+          : (<span>Offline</span>)
+        }
+        <br />
         <TextInput create placeholder="what to do?" onSave={this.createTodo} />
         <TodoList todos={todos} actions={todoActions} />
       </div>
@@ -31,10 +36,11 @@ class TodoView extends React.Component {
 TodoView.propTypes = {
   todoActions: PropTypes.object.isRequired,  // eslint-disable-line react/forbid-prop-types
   todo: PropTypes.object.isRequired,  // eslint-disable-line react/forbid-prop-types
-  todos: PropTypes.array.isRequired  // eslint-disable-line react/forbid-prop-types
+  todos: PropTypes.array.isRequired,  // eslint-disable-line react/forbid-prop-types
+  isOnline: PropTypes.bool.isRequired
 };
 
 export default connect(
-    state => ({ todo: state.todo, todos: state.todo.todos }),
+    state => ({ isOnline: state.app.isOnline, todo: state.todo, todos: state.todo.todos }),
     dispatch => ({ todoActions: bindActionCreators(TodoActions, dispatch) })
 )(TodoView);

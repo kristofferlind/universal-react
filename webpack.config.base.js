@@ -1,6 +1,5 @@
 const path = require('path');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -17,11 +16,7 @@ module.exports = {
     new webpack.EnvironmentPlugin({
       BROWSER: true
     }),
-    new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'client/index.html'
-    })
+    new webpack.NamedModulesPlugin()
   ],
   module: {
     rules: [

@@ -1,6 +1,7 @@
 const configMerge = require('webpack-merge');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.config.base');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const developmentConfig = {
   devServer: {
@@ -36,7 +37,11 @@ const developmentConfig = {
       name: 'manifest'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'client/index.html'
+    })
   ],
   module: {
     rules: [

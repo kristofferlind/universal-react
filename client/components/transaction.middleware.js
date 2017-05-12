@@ -3,7 +3,7 @@
 import TRANSACTION from './transaction.constants';
 
 const initialTransactions = [];
-const isTransaction = (action, id) => action.transaction && action.transaction.id === id;
+const isTransaction = (action, id) => action && action.transaction && action.transaction.id === id;
 const splitState = (state) => {
   if (state) {
     const { transactions = initialTransactions, ...baseState } = state;

@@ -1,5 +1,5 @@
 const isNode = typeof window === 'undefined';
-const baseURL = 'http://127.0.0.1:9000';
+export const baseURL = 'http://127.0.0.1:9000';
 let apiURL = '/api';
 
 if (isNode) {
@@ -13,5 +13,6 @@ export const apiEndpoints = {
 };
 
 export default {
-  apiEndpoints
+  apiEndpoints,
+  baseURL
 };

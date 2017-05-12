@@ -32,9 +32,19 @@ const request = (method, url, data) => new Promise((resolve, reject) => {
     .catch(reason => reject(reason));
 });
 
-export default {
+const methods = {
   get: url => request('GET', url),
   post: (url, data) => request('POST', url, data),
   put: (url, data) => request('PUT', url, data),
   delete: url => request('DELETE', url)
 };
+
+// only use request manager in browser
+if (process.env.BROWSER) {
+  const requestManager = require('./request-manager').default; // eslint-disable-line
+  methods.post = (url, data) => requestManager(() => request('POST', url, data));
+  methods.put = (url, data) => requestManager(() => request('PUT', url, data));
+  methods.delete = url => requestManager(() => request('DELETE', url));
+}
+
+export default methods;

@@ -5,21 +5,21 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='description' content='' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <noscript><link rel='stylesheet' href='/static/main.css'></noscript>
+    <noscript><link rel='stylesheet' href='main.css'></noscript>
   </head>
   <body>
     <div id='content'><%- content %></div>
     <script type='text/javascript'>
       window.INITIAL_STATE = <%- JSON.stringify(initialState) %>;
     </script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js' async></script>
+    <!-- <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js' async></script>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js' async></script>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/react-router/4.1.1/react-router.min.js' async></script>
-    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js' async></script>
-    <script type='text/javascript' src='static/main.js' async></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.min.js' async></script> -->
+    <script type='text/javascript' src='main.js' async></script>
     <script type='text/javascript'>
       function loadCSS(e){var t,a=document;l=a.createElement("link"),l.rel="stylesheet",l.href=e,l.type="text/css",t=a.getElementsByTagName("head")[0],t.appendChild(l)}
-      loadCSS("/static/main.css");
+      loadCSS("main.css");
     </script>
   </body>
 </html>

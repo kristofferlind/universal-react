@@ -13,6 +13,7 @@ const renderApp = () => render((
 ), contentElement);
 
 if (process.env.NODE_ENV === 'production') {
+  require('./serviceworker.setup'); // eslint-disable-line global-require
   asyncBootstrap(App).then(renderApp);
 } else {
   renderApp();

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Switch, Route, NavLink } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './socket.service';
 import { HomeView, AboutView, TodoView } from './app.routes.async';
+import Link from './navigation/link';
 
 const AppLayout = () => (
   <div className="is-loading">
     <header>
       <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/todo">Todo</NavLink></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/todo">Todo</Link></li>
       </ul>
     </header>
     <main>

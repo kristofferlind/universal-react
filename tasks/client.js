@@ -12,7 +12,7 @@ gulp.task('client:build:clean', () =>
     .pipe(clean({ force: true }))
 );
 
-gulp.task('client:build', ['client:build:clean'], (done) => {
+gulp.task('client:build', ['copy-serviceworker'], (done) => {
   webpack(webpackConfig, (error, statistics) => {
     if (error) {
       console.error(error);  // eslint-disable-line no-console
@@ -37,3 +37,8 @@ gulp.task('client:dev', () => {
     gutil.log('[webpack:dev-client]', 'http://localhost:9001/webpack-dev-server/');
   });
 });
+
+gulp.task('copy-serviceworker', ['client:build:clean'], () =>
+  gulp.src('client/app/serviceworker-api.js')
+    .pipe(gulp.dest(buildPath))
+);

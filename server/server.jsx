@@ -17,7 +17,7 @@ import cookieService from '../client/components/cookie.service';
 import environment from './config/environment';
 import Root from '../client/app/root';
 import rootReducer from '../client/app/root.reducer';
-import configureStore from '../client/app/store';
+import configureStore from '../client/app/configure-store';
 import errorHandler from './error';
 
 process.on('unhandledRejection', (reason) => {
@@ -41,7 +41,7 @@ export const io = require('socket.io')(server); // eslint-disable-line
 
 app.use('/api', api(io));
 app.use('/auth', auth);
-app.use('/static', express.static(path.join(__dirname, '../', 'dist')));
+app.use('/', express.static(path.join(__dirname, '../', 'dist')));
 
 app.use(inlineCSS({
   override: true,
